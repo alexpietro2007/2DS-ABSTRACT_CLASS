@@ -54,7 +54,18 @@ public abstract class Veiculo {
 
     public void imprimirFicha() {
         calculaIpva();
-        System.out.printf("Modelo: ", this.modelo, "\n", "Valor tabela: ", this.valorTabela, "\n", "Cor: ", this.cor,
-                "\n", "Combustivel: ", this.combustivel, "\n", "Ipva: ", this.ipva, "\n");
+        System.out.print(apres());  // Use System.out.print para imprimir a string formatada
     }
+    
+    public String apres() {
+        return String.format(
+            "Modelo: %s\nValor tabela: %.2f\nCor: %s\nCombustivel: %s\nIpva: %.2f\n",
+            this.modelo,
+            this.valorTabela,
+            this.cor,
+            this.combustivel,
+            this.ipva
+        );
+    }
+    
 }
